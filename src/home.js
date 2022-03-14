@@ -6,8 +6,8 @@
  * @flow strict-local
  */
 
- import React,{Component} from 'react';
- import { View,Text,Button} from 'react-native';
+import React,{Component} from 'react';
+ import { View,Text,Button,TouchableOpacity} from 'react-native';
 
  class HomeScreen extends Component {
    
@@ -21,9 +21,27 @@
           <Text>Home Screen</Text>
           <Button 
             title="To User Screen"
-            onPress={()=>{
-                this.props.navigation.navigate('User')
-            }}/>
+            onPress={() => this.props.navigation.navigate('User',{
+            userIdx:100,
+            userName:'jinhee',
+            userLastName:'byeon'
+            })}
+            />
+
+            <TouchableOpacity>
+            <Button
+            title="change the title"
+            onPress={()=>
+            this.props.navigation.setOptions({
+                title:'changed!!!',
+                headerStyle:{
+                    backgroundcolor:'pink'
+                },
+                headerTintColor:'red',
+            })
+            }
+            />
+            </TouchableOpacity>
       </View>
      )
  

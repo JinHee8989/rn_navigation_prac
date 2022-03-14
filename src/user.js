@@ -7,11 +7,34 @@
  */
 
  import React,{Component} from 'react';
- import { View,Text} from 'react-native';
+ import { View,Text,Button,TouchableOpacity} from 'react-native';
  
  class UserScreen extends Component {
+    
+    headerStyle=()=>{
+        this.props.navigation.setOptions({
+              title:'Customixing',
+              headerStyle:{
+                backgroundcolor:'blue'
+              },
+              headerTintColor:'yellow',
+              headerTitleStyle:{
+                fontWeight:'bold',
+                color:'green',
+              }
+           
+        })
+    }
    
    render(){
+
+    this.headerStyle();
+    const {params} = this.props.route;
+    const userIdx = params ? params.userIdx : null;
+    const userName = params ? params.userName : null;
+    const userLastName = params ? params.userLastName : null;
+
+
      return(
         <View style={{
             flex:1,
@@ -21,9 +44,14 @@
           <Text>User Screen</Text>
           <Button 
             title="To Home Screen"
-            onPress={()=>{
-                this.props.navigation.navigate('Home')
-            }}/>
+            onPress={() => this.props.navigation.navigate('Home')}
+            />
+         
+       
+            <Text>user Idx : {JSON.stringify(userIdx)}</Text>
+            <Text>user name : {JSON.stringify(userName)}</Text>
+            <Text>user last-name : {JSON.stringify(userLastName)}</Text>
+         
       </View>
      )
  
