@@ -22,8 +22,16 @@
                 fontWeight:'bold',
                 color:'green',
               },
-              headerBackTitle: 'BACK'
-           
+              headerBackTitle: 'BACK',
+              headerRight: ()=> (
+                <Button
+                  title="Go Back"
+                  onPress={()=>{
+                      this.props.navigation.navigate('Home')
+                  }}
+                  color='orange'
+                />
+              )
         })
     }
    

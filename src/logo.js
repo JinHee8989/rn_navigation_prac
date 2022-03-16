@@ -8,7 +8,7 @@
 
  import React,{Component} from 'react';
  import { Image} from 'react-native';
- import Logo from './assets/pics/kid_icon';
+ import Logo from './assets/pics/kid_icon.png';
  
  class LogoTitle extends Component {
    
