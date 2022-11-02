@@ -18,7 +18,7 @@ import React,{Component} from 'react';
           alignItems:'center',
           justifyContent:'center',
       }}>
-          <Text>Home Screen</Text>
+          <Text>Home Screen1</Text>
           <Button 
             title="To User Screen"
             onPress={() => this.props.navigation.navigate('User',{
@@ -37,6 +37,7 @@ import React,{Component} from 'react';
                 headerStyle:{
                     backgroundcolor:'pink'
                 },
+
                 headerTintColor:'red',
             })
             }
